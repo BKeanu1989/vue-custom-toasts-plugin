@@ -9,9 +9,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["es6", "esnext", "es2016", "dom", "dom.iterable", "scripthost"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
