@@ -2,7 +2,7 @@
     <Teleport to="body">
         <Transition>
             <div class="toast-container" ref="_toast" v-if="isOpen">
-                <div v-for="(toast, index) in usableCustomToast.computedMessages.value" :key="index">
+                <div class="toast--single" v-for="(toast, index) in usableCustomToast.computedMessages.value" :key="index" :data-type="toast.type">
                     <div class="toast-message" style="display: flex;">
                         {{ toast.message }}
                         <div @click="usableCustomToast.deleteIndex(index)" class="close-container">
@@ -61,5 +61,24 @@ onMounted(() => {
 .progress-bar-overlay {
     background-color: green;
     height: 5px;
+}
+
+.toast--single {
+    padding: 2px 5px;
+}
+
+.toast--single[data-type="success"] {
+    background-color: green;
+}
+
+
+.toast--single[data-type="warning"] {
+    background-color: red;
+}
+
+
+.toast--single[data-type="info"] {
+    background-color: yellow;
+    color: black;
 }
 </style>

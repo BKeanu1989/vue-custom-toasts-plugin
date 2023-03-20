@@ -8,5 +8,6 @@ export default {
               options is user options passed in
           */
          app.component('the-custom-toast', TheToastVue)
+         app.provide('custom-toast-counter', 5000)
     },
 };

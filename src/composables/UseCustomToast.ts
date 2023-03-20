@@ -1,11 +1,11 @@
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, inject } from "vue";
 type ToastType = "success" | "warning" | "info"
 type ToastMessage = {
     message: string,
     counter: number,
     type: ToastType
 }
-const counter = 5000;
+let counter = 2000
 const toastMessages = ref<ToastMessage[]>([
     {
         message: 'test',
@@ -16,7 +16,7 @@ const toastMessages = ref<ToastMessage[]>([
 export function useCustomToast() {
     let intervalDelete: number | undefined = undefined
     const showToast = ref(false)
-
+    counter = inject('custom-toast-counter', 2000)
     const setShow = (val: boolean) => {
         showToast.value = val
     }
@@ -40,7 +40,7 @@ export function useCustomToast() {
     const toggle = () => showToast.value = !showToast.value
 
     const installInterval = () => {
-        console.log("install interval")
+        console.log("install interval", counter)
         const val = 10
         intervalDelete = setInterval(() => {
             const copiedArray = [...toastMessages.value]
@@ -61,7 +61,7 @@ export function useCustomToast() {
             }
         } else {
             clearInterval(intervalDelete)
-            console.clear()
+            // console.clear()
             intervalDelete = undefined
         }
     }, {immediate: true})
