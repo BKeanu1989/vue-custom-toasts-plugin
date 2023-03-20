@@ -2,7 +2,7 @@
     <Teleport to="body">
         <Transition>
             <div class="toast-container" ref="_toast" v-if="isOpen">
-                <div v-for="(toast, index) in computedMessages" :key="index">
+                <div v-for="(toast, index) in usableCustomToast.computedMessages.value" :key="index">
                     <div class="toast-message" style="display: flex;">
                         {{ toast.message }}
                         <div @click="usableCustomToast.deleteIndex(index)" class="close-container">
@@ -13,7 +13,6 @@
                         <div class="progress-bar-overlay" :style="{width: `${(toast.counter * 100) / 5000}%`}"></div>
                     </div>
                 </div>
-                <button type="button" @click="usableCustomToast.addMessage('tet')">Test add message</button>
             </div>
         </Transition>
     </Teleport>
@@ -23,7 +22,6 @@ import { computed, onMounted, ref } from 'vue';
 import { useCustomToast } from '../composables/UseCustomToast';
 const usableCustomToast = useCustomToast()
 
-const computedMessages = computed(() => usableCustomToast.toastMessages.value)
 const isOpen = computed(() => usableCustomToast.toastMessages.value.length > 0 ? true : false)
 const _toast = ref(null)
 

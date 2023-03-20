@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-// import TheToast from './components/TheToast.vue';
+import { useCustomToast } from './composables/UseCustomToast';
+
+const usableCustomToast = useCustomToast()
+
 </script>
 
 <template>
   <div>
     <the-custom-toast></the-custom-toast>
+    <button type="button" @click="usableCustomToast.addMessage('tet')">Test add message</button>
+
   </div>
 </template>
 

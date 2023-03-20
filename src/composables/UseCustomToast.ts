@@ -1,14 +1,20 @@
-import { ref, watch } from "vue";
-
+import { computed, ref, watch } from "vue";
+type ToastType = "success" | "warning" | "info"
+type ToastMessage = {
+    message: string,
+    counter: number,
+    type: ToastType
+}
+const counter = 5000;
+const toastMessages = ref<ToastMessage[]>([
+    {
+        message: 'test',
+        counter: counter,
+        type: 'success'
+    }
+])
 export function useCustomToast() {
-    const counter = 5000;
     let intervalDelete: number | undefined = undefined
-    const toastMessages = ref([
-        {
-            message: 'test',
-            counter: counter
-        }
-    ])
     const showToast = ref(false)
 
     const setShow = (val: boolean) => {
@@ -21,7 +27,15 @@ export function useCustomToast() {
         toastMessages.value.splice(index, 1)
     }
 
-    const addMessage = (val: string) => toastMessages.value.push({message: val, counter: counter})
+    const addMessage = (val: string, type: ToastType = 'success') => {
+        toastMessages.value.push(
+            {
+                message: val, 
+                counter: counter,
+                type: type
+            }
+        )
+    }
 
     const toggle = () => showToast.value = !showToast.value
 
@@ -52,7 +66,7 @@ export function useCustomToast() {
         }
     }, {immediate: true})
 
-
+    const computedMessages = computed(() => toastMessages.value)
 
 
     return {
@@ -60,6 +74,7 @@ export function useCustomToast() {
         addMessage,
         setShow,
         toggle,
-        deleteIndex
+        deleteIndex,
+        computedMessages
     }
 }
