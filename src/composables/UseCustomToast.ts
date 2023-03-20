@@ -42,7 +42,7 @@ export function useCustomToast() {
     const installInterval = () => {
         console.log("install interval", counter)
         const val = 10
-        intervalDelete = setInterval(() => {
+        intervalDelete = window.setInterval(() => {
             const copiedArray = [...toastMessages.value]
             if (copiedArray.length == 0) return
             const newArr = copiedArray.map((x) => {
