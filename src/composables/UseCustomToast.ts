@@ -1,10 +1,6 @@
 import { computed, ref, watch, inject } from "vue";
-type ToastType = "success" | "warning" | "info"
-type ToastMessage = {
-    message: string,
-    counter: number,
-    type: ToastType
-}
+import { ToastMessage } from "../types/ToastMessage";
+import { ToastType } from "../types/ToastType";
 let counter = 2000
 const toastMessages = ref<ToastMessage[]>([
     {

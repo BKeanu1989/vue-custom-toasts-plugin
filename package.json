@@ -4,9 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
+
   ],
-  "typings": "./dist/types/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/kf-vue-toast-plugin.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/BKeanu1989/vue-custom-toasts-plugin"
