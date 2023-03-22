@@ -3,15 +3,19 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
+  "main": "./dist/kf-vue-toast-plugin.umd.cjs",
+  "module": "./dist/kf-vue-toast-plugin.js",
   "files": [
     "dist",
     "*.d.ts"
   ],
+  "typings": "./dist/types.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/types.d.ts",
       "require": "./dist/kf-vue-toast-plugin.js"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "repository": {
     "type": "git",
@@ -26,7 +30,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "build:declaration": "vue-tsc --declaration --emitDeclarationOnly",
-    "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish"
+    "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish",
+    "generate:types": "vue-tsc --declaration true --noEmit false  --emitDeclarationOnly --outdir ./dist"
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
