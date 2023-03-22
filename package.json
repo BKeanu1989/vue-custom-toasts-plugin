@@ -1,12 +1,11 @@
 {
   "name": "kf-vue-toast-plugin",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist",
     "*.d.ts"
-
   ],
   "exports": {
     ".": {
@@ -26,7 +25,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "build:declaration": "vue-tsc --declaration --emitDeclarationOnly"
+    "build:declaration": "vue-tsc --declaration --emitDeclarationOnly",
+    "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish"
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
