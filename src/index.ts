@@ -1,4 +1,5 @@
 import { ToastMessage } from './types/ToastMessage'
 import { ToastType } from './types/ToastType'
-export { default as TheCustomToast} from './components/TheToast.vue'
-export type { ToastMessage, ToastType}
+import TheCustomToast  from './components/TheToast.vue'
+export { default as CustomToast} from './plugins/CustomToast'
+export type { ToastMessage, ToastType, TheCustomToast }
