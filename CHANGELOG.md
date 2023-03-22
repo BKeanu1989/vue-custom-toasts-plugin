@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/BKeanu1989/vue-custom-toasts-plugin/compare/v0.0.1...v0.0.2) (2023-03-22)
+
+
+### Bug Fixes
+
+* declaration ([6628c45](https://github.com/BKeanu1989/vue-custom-toasts-plugin/commit/6628c45e9073eb712ccd6cc77788752888103157))
+
 ### 0.0.1 (2023-03-22)
 
 

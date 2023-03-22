@@ -1,7 +1,7 @@
 {
   "name": "kf-vue-toast-plugin",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/kf-vue-toast-plugin.umd.cjs",
   "module": "./dist/kf-vue-toast-plugin.js",
