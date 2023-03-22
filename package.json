@@ -30,7 +30,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "build:declaration": "vue-tsc --declaration --emitDeclarationOnly",
-    "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish",
+    "release": "npm run build && npm run generate:types && npx standard-version && git push --follow-tags origin master && npm publish",
     "generate:types": "vue-tsc --declaration true --noEmit false  --emitDeclarationOnly --outdir ./dist"
   },
   "dependencies": {
