@@ -1,7 +1,7 @@
 {
   "name": "kf-vue-toast-plugin",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/kf-vue-toast-plugin.umd.cjs",
   "module": "./dist/kf-vue-toast-plugin.js",
@@ -9,7 +9,7 @@
     "dist",
     "*.d.ts"
   ],
-  "typings": "./dist/types.d.ts",
+  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
