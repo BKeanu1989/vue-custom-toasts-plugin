@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/BKeanu1989/vue-custom-toasts-plugin/compare/v0.0.7...v0.0.8) (2023-03-29)
+
+
+### Bug Fixes
+
+* vue 3 mismatch on testing consumer ([fa47c0e](https://github.com/BKeanu1989/vue-custom-toasts-plugin/commit/fa47c0ee0689bb53c9ea3d4a16d6226f842e2d27))
+
 ### [0.0.7](https://github.com/BKeanu1989/vue-custom-toasts-plugin/compare/v0.0.6...v0.0.7) (2023-03-22)
 
 ### [0.0.6](https://github.com/BKeanu1989/vue-custom-toasts-plugin/compare/v0.0.5...v0.0.6) (2023-03-22)
