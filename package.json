@@ -7,7 +7,7 @@
   "module": "./dist/kf-vue-toast-plugin.js",
   "files": [
     "dist",
-    "*.d.ts"
+    "types"
   ],
   "typings": "./dist/index.d.ts",
   "exports": {
